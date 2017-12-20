@@ -1,0 +1,90 @@
+div.row>div{
+    width: 1em;
+    height: 1.6em;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.row{
+    clear: both;
+}
+
+div.row:nth-child(even) div{
+    background-color: green;
+}
+
+div.row:nth-child(odd) div{
+    background-color: yellowgreen;
+}
+
+div.r0 div:nth-child(-n+6), div.r0 div:nth-last-child(-n+6){
+    background-color: white;
+}
+
+div.r0 div:nth-child(7){
+    background-color: brown;
+}
+
+div.r2 div:nth-child(-n+1), div.r2 div:nth-last-child(-n+1){
+    background-color: white;
+} 
+div.r3 div:nth-child(-n+2), div.r3 div:nth-last-child(-n+2){
+    background-color: white;
+} 
+div.r4 div:nth-child(-n+3), div.r4 div:nth-last-child(-n+3){
+    background-color: white;
+} 
+div.r5 div:nth-child(-n+4), div.r5 div:nth-last-child(-n+4){
+    background-color: white;
+} 
+div.r6 div:nth-child(-n+5), div.r6 div:nth-last-child(-n+5){
+    background-color: white;
+} 
+div.r7 div:nth-child(-n+6), div.r7 div:nth-last-child(-n+6){
+    background-color: white;
+} 
+
+div.row>div>div{
+    width: 0.8em;
+    height: 0.8em;
+    opacity: 0;
+    background-color: transparent;
+}
+
+div.row>div>div.blue{
+    background-color: aqua;
+}
+div.row>div>div.chocolate{
+    background-color: chocolate;
+}
+div.row>div>div.blueviolet{
+    background-color: blueviolet;
+}
+div.row>div>div.crimson{
+    background-color: crimson;
+}
+div.row>div>div.gold{
+    background-color: gold;
+}
+div.row>div>div.palevioletred{
+    background-color: palevioletred;
+}
+div.row>div>div.white{
+    background-color: white;
+}
+
+.on,.off{
+    cursor: pointer;
+}
+
+.off{
+    transform: rotate(0deg);
+    opacity: 0.5;
+}
+
+.on{
+    transform: rotate(180deg);
+    opacity: 1;
+}
