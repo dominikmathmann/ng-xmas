@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs/Subscription';
     trigger('xmas', [
       state('false', style({ opacity: '0', visibility: 'hidden' })),
       state('true', style({ opacity: '1', visibility: 'visible' })),
-      transition('false <=> true', animate('0.2s linear'))
+      transition('false <=> true', animate('0.1s linear'))
     ])
   ]
 })
@@ -23,7 +23,11 @@ export class XmasTreeComponent implements OnInit {
 
   public lightOn: boolean;
 
-  lightIntervall: Subscription;
+  public colorClasses=[
+    "gold","blueviolet","white","crimson","blue", "blueviolet", "palevioletred", "gold", "blue", "chocolate", "white", "crimson", "blueviolet"
+  ]
+
+  private lightIntervall: Subscription;
 
   constructor() { }
 
@@ -32,8 +36,9 @@ export class XmasTreeComponent implements OnInit {
     this.lightOn = this.plugged;
 
     if (this.plugged) {
-      this.lightIntervall=Observable.interval(1000).subscribe( n => {
+      this.lightIntervall=Observable.interval(800).subscribe( n => {
         this.lightOn=!this.lightOn;
+        setTimeout( () => this.shuffleArray(this.colorClasses), 200);
       })
     } else if (this.lightIntervall){
       this.lightIntervall.unsubscribe();
@@ -42,6 +47,19 @@ export class XmasTreeComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  /**
+ * Randomize array element order in-place.
+ * Using Durstenfeld shuffle algorithm.
+ */
+private  shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+}
 
 
 }
