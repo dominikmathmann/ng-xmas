@@ -2,8 +2,11 @@
 
 ## Angular Animations
 
-- aa
-- bb
+- animations
+- trigger
+- state
+- transition
+- animation with parmeters / Animationen mit Parametern
 
 ## Run
 
