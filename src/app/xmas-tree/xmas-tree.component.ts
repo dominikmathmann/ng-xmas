@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
+import { generate } from 'rxjs/observable/generate';
+import { QueryList } from '@angular/core/src/linker/query_list';
+import { ElementRef } from '@angular/core/src/linker/element_ref';
 
 @Component({
   selector: 'app-xmas-tree',
@@ -12,54 +15,48 @@ import { Subscription } from 'rxjs/Subscription';
   animations: [
     trigger('xmas', [
       state('false', style({ opacity: '0', visibility: 'hidden' })),
-      state('true', style({ opacity: '1', visibility: 'visible' })),
+      state('true', style({ opacity: '1', visibility: 'visible', backgroundColor: "{{rgb}}"}), {params: {rgb: "white"}}),
       transition('false <=> true', animate('0.1s linear'))
     ])
   ]
 })
-export class XmasTreeComponent implements OnInit {
+export class XmasTreeComponent{
 
   public plugged: boolean;
 
-  public lightOn: boolean;
-
-  public colorClasses=[
-    "gold","blueviolet","white","crimson","blue", "blueviolet", "palevioletred", "gold", "blue", "chocolate", "white", "crimson", "blueviolet"
-  ]
+  public animationConfig:any[];
 
   private lightIntervall: Subscription;
 
-  constructor() { }
+  @ViewChildren("bulp")
+  private bulps:QueryList<ElementRef>;
 
-  private toggleXmasLight() {
+  constructor() { 
+    this.animationConfig=[];
+  }
+
+  public toggleXmasLight() {
     this.plugged = !this.plugged;
-    this.lightOn = this.plugged;
 
     if (this.plugged) {
-      this.lightIntervall=Observable.interval(800).subscribe( n => {
-        this.lightOn=!this.lightOn;
-        setTimeout( () => this.shuffleArray(this.colorClasses), 200);
+      this.lightIntervall=Observable.interval(500).subscribe( n => {
+        this.animationConfig = this.generateAnmationConfig ( this.animationConfig.length>0?this.animationConfig[0].value:false );
       })
     } else if (this.lightIntervall){
       this.lightIntervall.unsubscribe();
+      this.animationConfig= this.generateAnmationConfig(true);
     }
   }
 
-  ngOnInit() {
+  private generateAnmationConfig(oldValue:boolean){
+    let args=Array(this.bulps.length).fill(0).map( _ => {return {value: !oldValue, params: {rgb: this.generateRGBColors()}}});
+    return args;
   }
 
-  /**
- * Randomize array element order in-place.
- * Using Durstenfeld shuffle algorithm.
- */
-private  shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+  private generateRGBColors():string{
+    let r= Math.floor(Math.random() * (255 - 0));
+    let g= Math.floor(Math.random() * (255 - 0));
+    let b= Math.floor(Math.random() * (255 - 0));
+    return `rgb(${r},${g},${b}`;
   }
-}
-
-
 }

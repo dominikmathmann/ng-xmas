@@ -1,122 +1,124 @@
-<div class="row r7">
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[0]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
+<div>
+  <div class="row r7">
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[0]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+  </div>
+  <div class="row r6">
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[1]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+  </div>
+  <div class="row r5">
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[2]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[3]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+  </div>
+  <div class="row r4">
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[4]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[5]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+  </div>
+  <div class="row r3">
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[6]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[7]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+  </div>
+  <div class="row r2">
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[8]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[9]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+  </div>
+  <div class="row r1">
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[10]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[11]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div [@xmas]="animationConfig[12]" #bulp></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+  </div>
+  <div class="row r0">
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+    <div><div></div></div>
+  </div>
+  
+  <img src="../../assets/images/plug.png" alt="plug" class="off" (click)="toggleXmasLight()" [class.on]="plugged" [class.off]="!plugged"/>
 </div>
-<div class="row r6">
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[1]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-</div>
-<div class="row r5">
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[2]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[3]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-</div>
-<div class="row r4">
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[4]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[5]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-</div>
-<div class="row r3">
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[6]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[7]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-</div>
-<div class="row r2">
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[8]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[9]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-</div>
-<div class="row r1">
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[10]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[11]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div [class]="colorClasses[12]" [@xmas]="lightOn"></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-</div>
-<div class="row r0">
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-  <div><div></div></div>
-</div>
-
-<img src="../../assets/images/plug.png" alt="plug" class="off" (click)="toggleXmasLight()" [class.on]="plugged" [class.off]="!plugged"/>
