@@ -11,3 +11,6 @@
 ## Run
 
 Run `ng build` 
+
+
+by Dominik Mathmann (dominikmathmann) , GEDOPLAN
